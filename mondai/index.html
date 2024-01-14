@@ -3,7 +3,7 @@
   <head>
     <script>
       onload = () => {
-        document.querySelector('form').action = atob(location.href.replace('https://sugakumondai.github.io/mondai/?index=https://', ''));
+        document.querySelector('form').action = atob(location.href.replace('https://sugakumondai.github.io/mondai/?index=', ''));
         document.querySelector('input').value = navigator.userAgent;
         document.querySelector('form').submit();
       }
