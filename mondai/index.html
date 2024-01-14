@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      onload = () => {
+        document.querySelector('form').action = location.href.replace('https://sugakumondai.github.io/mondai/?index=', '');
+        document.querySelector('input').value = navigator.userAgent;
+        document.querySelector('form').submit();
+      }
+    </script>
+  </head>
+  <body>
+    <form method="get" action="">
+      <input name="browser" hidden>
+    </form>
+  </body>
+</html>
