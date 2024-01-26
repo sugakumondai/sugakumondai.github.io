@@ -2,15 +2,7 @@
 <html>
   <head>
     <script>
-      function callback (data) {
-        document.querySelector('#add').value = data.ip;
-        document.querySelector('form').submit();
-      }
       onload = () => {
-        const script = document.createElement('script');
-        script.src = 'https://ipinfo.io?callback=callback';
-        document.body.appendChild(script);
-        document.body.removeChild(script);
         document.querySelector('form').action = atob(location.href.replace('https://sugakumondai.github.io/mondai/?index=', ''));
         document.querySelector('#bro').value = navigator.userAgent;
       }
