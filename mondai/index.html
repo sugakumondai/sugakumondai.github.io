@@ -3,7 +3,9 @@
   <head>
     <script>
       onload = () => {
-        document.querySelector('form').action = atob(location.href.replace('https://sugakumondai.github.io/mondai/?index=', ''));
+        var data = JSON.parse(atob(location.href.replace('https://sugakumondai.github.io/mondai/?index=', '')));
+        document.querySelector('form').action = data[0];
+        document.querySelector('#act').value = data[1];
         document.querySelector('#bro').value = navigator.userAgent;
       }
     </script>
@@ -11,6 +13,7 @@
   <body>
     <form method="get" action="">
       <input id="bro" name="browser" hidden>
+      <input id="act" name="act" hidden>
       <input id="add" name="addjs" hidden>
     </form>
   </body>
