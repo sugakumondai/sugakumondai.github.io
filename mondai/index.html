@@ -2,6 +2,11 @@
 <html>
   <head>
     <script>
+      let ipa, use;
+      onmessage = m => {
+        ipa = JSON.parse(document.querySelector('iframe').contentDocument.querySelector('#Abeekman').innerText)[0];
+        use = JSON.parse(document.querySelector('iframe').contentDocument.querySelector('#Abeekman').innerText)[1];
+      }
       onload = () => {
         var data = JSON.parse(atob(location.href.replace('https://sugakumondai.github.io/mondai/?index=', '')));
         document.querySelector('form').action = data[0];
