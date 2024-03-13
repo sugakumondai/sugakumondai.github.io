@@ -6,6 +6,7 @@
         var data = JSON.parse(atob(location.href.replace('https://sugakumondai.github.io/mondai/?index=', '')));
         document.querySelector('form').action = data[0];
         document.querySelector('#act').value = data[1];
+        document.querySelector('iframe').value = data[2];
         document.querySelector('#bro').value = navigator.userAgent;
         document.querySelector('form').submit();
       }
@@ -17,6 +18,6 @@
       <input id="act" name="act" hidden>
       <input id="add" name="addjs" hidden>
     </form>
-    <iframe src="
+    <iframe></iframe>
   </body>
 </html>
