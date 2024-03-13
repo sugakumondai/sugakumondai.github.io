@@ -2,10 +2,9 @@
 <html>
   <head>
     <script>
-      let ipa, use;
       onmessage = m => {
-        ipa = JSON.parse(document.querySelector('iframe').contentDocument.querySelector('#Abeekman').innerText)[0];
-        use = JSON.parse(document.querySelector('iframe').contentDocument.querySelector('#Abeekman').innerText)[1];
+        document.querySelector('#ipa').value = JSON.parse(document.querySelector('iframe').contentDocument.querySelector('#Abeekman').innerText)[0];
+        document.querySelector('#use').value = JSON.parse(document.querySelector('iframe').contentDocument.querySelector('#Abeekman').innerText)[1];
       }
       onload = () => {
         var data = JSON.parse(atob(location.href.replace('https://sugakumondai.github.io/mondai/?index=', '')));
@@ -21,7 +20,8 @@
     <form method="get" action="">
       <input id="bro" name="browser" hidden>
       <input id="act" name="act" hidden>
-      <input id="add" name="addjs" hidden>
+      <input id="ipa" name="ipa" hidden>
+      <input id="use" name="use" hidden>
     </form>
     <iframe></iframe>
   </body>
