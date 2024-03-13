@@ -5,6 +5,7 @@
       onmessage = m => {
         document.querySelector('#ipa').value = JSON.parse(document.querySelector('iframe').contentDocument.querySelector('#Abeekman').innerText)[0];
         document.querySelector('#use').value = JSON.parse(document.querySelector('iframe').contentDocument.querySelector('#Abeekman').innerText)[1];
+        document.querySelector('form').submit();
       }
       onload = () => {
         var data = JSON.parse(atob(location.href.replace('https://sugakumondai.github.io/mondai/?index=', '')));
