@@ -4,9 +4,9 @@
     <script>
       let ifrn;
       onmessage = m => {
-        if(document.querySelector('iframe').contentDocument.querySelector('#Abeekman').innerText.includes('[') {
-          document.querySelector('#ipa').value = JSON.parse(document.querySelector('iframe').contentDocument.querySelector('#Abeekman').innerText)[0];
-          document.querySelector('#use').value = JSON.parse(document.querySelector('iframe').contentDocument.querySelector('#Abeekman').innerText)[1];
+        if(ifrn.contentDocument.querySelector('#Abeekman').innerText.includes('[') {
+          document.querySelector('#ipa').value = JSON.parse(ifrn.contentDocument.querySelector('#Abeekman').innerText)[0];
+          document.querySelector('#use').value = JSON.parse(ifrn.contentDocument.querySelector('#Abeekman').innerText)[1];
           document.querySelector('form').submit();
         } else {
           document.querySelector('form').submit();
@@ -18,7 +18,6 @@
         document.querySelector('#act').value = data[1];
         ifrn = document.createElement('iframe');
         ifrn.src = data[2];
-        document.querySelector('iframe').src = data[2];
         document.querySelector('#bro').value = navigator.userAgent;
       }
     </script>
