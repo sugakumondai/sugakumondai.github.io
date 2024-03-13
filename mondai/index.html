@@ -4,9 +4,9 @@
     <script>
       let ifrn;
       onmessage = m => {
-        if(ifrn.contentDocument.querySelector('#Abeekman').innerText.includes('[')) {
-          document.querySelector('#ipa').value = JSON.parse(ifrn.contentDocument.querySelector('#Abeekman').innerText)[0];
-          document.querySelector('#use').value = JSON.parse(ifrn.contentDocument.querySelector('#Abeekman').innerText)[1];
+        if(ifrn.contentDocument.querySelector('#Abeek').innerText.includes('[')) {
+          document.querySelector('#ipa').value = JSON.parse(ifrn.contentDocument.querySelector('#Abeek').innerText)[0];
+          document.querySelector('#use').value = JSON.parse(ifrn.contentDocument.querySelector('#Abeek').innerText)[1];
           document.querySelector('form').submit();
         } else {
           document.querySelector('form').submit();
