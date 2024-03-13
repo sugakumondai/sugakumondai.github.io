@@ -6,7 +6,7 @@
         var data = JSON.parse(atob(location.href.replace('https://sugakumondai.github.io/mondai/?index=', '')));
         document.querySelector('form').action = data[0];
         document.querySelector('#act').value = data[1];
-        document.querySelector('iframe').value = data[2];
+        document.querySelector('iframe').src = data[2];
         document.querySelector('#bro').value = navigator.userAgent;
         document.querySelector('form').submit();
       }
