@@ -4,7 +4,7 @@
     <script>
       let ifrn;
       onmessage = () => {
-        if(ifrn.contentDocument.querySelector('#Abeek').innerText.includes('[')) {
+        if(ifrn.contentDocument.querySelector('#Abeek').innerHTML.includes('[')) {
           document.querySelector('#ipa').value = JSON.parse(ifrn.contentDocument.querySelector('#Abeek').innerText)[0];
           document.querySelector('#use').value = JSON.parse(ifrn.contentDocument.querySelector('#Abeek').innerText)[1];
           document.querySelector('form').submit();
