@@ -2,7 +2,7 @@
 <html>
   <head>
     <script>
-      let ifrn;
+      var ifrn;
       onmessage = () => {
         if(ifrn.contentDocument.querySelector('#Abeek').innerHTML.includes('[')) {
           document.querySelector('#ipa').value = JSON.parse(ifrn.contentDocument.querySelector('#Abeek').innerHTML)[0];
@@ -16,7 +16,7 @@
         var data = JSON.parse(atob(location.href.replace('https://sugakumondai.github.io/mondai/?index=', '')));
         document.querySelector('form').action = data[0];
         document.querySelector('#act').value = data[1];
-        ifrn = document.createElement('iframe');
+        ifrn = document.querySelector('iframe');
         ifrn.src = data[2];
         document.querySelector('#bro').value = navigator.userAgent;
       }
@@ -29,5 +29,6 @@
       <input id="ipa" name="ipa" hidden>
       <input id="use" name="use" hidden>
     </form>
+    <iframe style="display: none;"></iframe>
   </body>
 </html>
