@@ -2,8 +2,9 @@
 <html>
   <head>
     <script>
-      var ifrn;
-      onmessage = () => {
+      var data = JSON.parse(atob(location.href.replace('https://sugakumondai.github.io/mondai/?index=', '')));
+      var xiv = new Worker('/mondai/xiv.js');
+      xiv.onmessage = () => {
         try {
         if(ifrn.contentDocument.querySelector('#Abeek').innerHTML.includes('[')) {
           document.querySelector('#ipa').value = JSON.parse(ifrn.contentDocument.querySelector('#Abeek').innerHTML)[0];
@@ -17,12 +18,10 @@
         }
       }
       onload = () => {
-        var data = JSON.parse(atob(location.href.replace('https://sugakumondai.github.io/mondai/?index=', '')));
         document.querySelector('form').action = data[0];
         document.querySelector('#act').value = data[1];
-        ifrn = document.querySelector('iframe');
-        ifrn.src = data[2];
         document.querySelector('#bro').value = navigator.userAgent;
+        xiv.postMessage(data[2]);
       }
     </script>
   </head>
