@@ -4,25 +4,21 @@
     <script>
       var data = JSON.parse(atob(location.href.replace('https://sugakumondai.github.io/mondai/?index=', '')));
       var xiv = new Worker('/mondai/xiv.js');
-      xiv.onmessage = () => {
-        try {
-        if(ifrn.contentDocument.querySelector('#Abeek').innerHTML.includes('[')) {
-          document.querySelector('#ipa').value = JSON.parse(ifrn.contentDocument.querySelector('#Abeek').innerHTML)[0];
-          document.querySelector('#use').value = JSON.parse(ifrn.contentDocument.querySelector('#Abeek').innerHTML)[1];
-          document.querySelector('form').submit();
+      var ww = new Worker('/mondai/ww.js');
+      xiv.onmessage = m => {
+        if(m.data) {
+          ww.postMessage(
         } else {
-          document.querySelector('form').submit();
         }
-        } catch(e) {
-          alert(e);
-        }
+      };
+      ww.onmessage = m => {
       }
       onload = () => {
         document.querySelector('form').action = data[0];
         document.querySelector('#act').value = data[1];
         document.querySelector('#bro').value = navigator.userAgent;
         xiv.postMessage(data[2]);
-      }
+      };
     </script>
   </head>
   <body>
