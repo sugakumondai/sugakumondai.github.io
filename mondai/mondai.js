@@ -1,6 +1,6 @@
 var data = JSON.parse(
   atob(
-    location.href.replace('https://sugakumondai.github.io/mondai/?index=', '')
+    location.href.slice(location.href.indexOf('?index=') + 7)
   )
 );
 var xiv = new Worker('/mondai/xiv.js');
