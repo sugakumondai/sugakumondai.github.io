@@ -22,6 +22,5 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('form').action = data[0];
   document.querySelector('#act').value = data[1];
   document.querySelector('#bro').value = navigator.userAgent;
-  xiv.postMessage(data[2]);
 });
 xiv.postMessage(data[2]);
