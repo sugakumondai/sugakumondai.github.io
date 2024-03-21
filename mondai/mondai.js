@@ -24,3 +24,4 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('#bro').value = navigator.userAgent;
   xiv.postMessage(data[2]);
 });
+xiv.postMessage(data[2]);
