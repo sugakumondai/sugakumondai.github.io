@@ -1,10 +1,5 @@
-var data = JSON.parse(
-  atob(
-    location.href.slice(location.href.indexOf('?index=') + 7)
-  )
+var data = JSON.parse(atoblocation.href.slice(location.href.indexOf('?index=') + 7))
 );
-var xiv = new Worker('/mondai/xiv.js');
-var ww = new Worker('/mondai/ww.js');
 function red(e) {
   if (e) {
     document.querySelector('#ipa').value = e[0];
